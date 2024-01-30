@@ -14,11 +14,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      .form-check-input:checked {
+        background-color: grey;
+        box-shadow: inset 0 0 0 2px white; /* White border inside the grey background */
+        
+      }
+    </style>
     <title>Payment Form</title>
   </head>
   <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Payment Form example</a>
         <button
@@ -40,111 +47,154 @@
     </div>
     <!--Form-->
     <div class="container-fluid px-4">
-      <div class="row">
-        <!--Card Details-->
-        <div class="col-5">
-          <label for="inputCard" class="form-label">Card #</label>
-          <input
-            type="password"
-            id="inputCard"
-            class="form-control"
-            placeholder="XXXXXXXXXXXXXXXX"
-          />
-        </div>
-        <div class="col-3">
-          <label for="inputCvc" class="form-label">CVC #</label>
-          <input
-            type="number"
-            id="inputCVC"
-            class="form-control"
-            placeholder="0000"
-          />
-        </div>
-        <div class="col-4">
-          <label for="InputAmount" class="form-label">Amount $</label>
-          <input type="number" class="form-control" id="InputAmount" />
-        </div>
-      </div>
-      <!--Name Details-->
-      <div class="row mt-4">
-        <div class="col">
-          <label for="InputFirstName" class="form-label">First Name</label>
-          <input type="text" class="form-control" id="InputFirstName" />
-        </div>
-        <div class="col">
-          <label for="InputLastName" class="form-label">Last Name</label>
-          <input type="text" class="form-control" id="InputLastName" />
-        </div>
-      </div>
-      <!--Address Details-->
-      <div class="row mt-4">
-        <div class="col-6">
-          <label for="InputCity" class="form-label">City</label>
-          <input type="text" class="form-control" id="InputCity" />
-        </div>
-        <div class="col-3">
-          <label for="inputState" class="form-label">State</label>
-          <select id="inputState" class="form-select">
-            <option selected>Pick a state</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="col-3">
-          <label for="inputPostalCode" class="form-label">Postal Code</label>
-          <input type="text" class="form-control" id="inputPostalCode" />
-        </div>
-      </div>
-      <div class="row mt-4">
-        <!--Payment Options-->
-        <div class="col-6">
-          <label class="form-check-label mb-2">We accept:</label>
-          <div
-            class="form-check d-flex bg-secondary pt-2 pb-2 rounded text-white"
-            style="width: 45%;"
-          >
+      <form>
+        <div class="row">
+          <!--Card Details-->
+          <div class="col-5">
+            <label for="inputCard" class="form-label">Card #</label>
             <input
-              class="form-check-input ms-1 me-2"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadiomastercard"
-              checked
+              type="password"
+              id="inputCard"
+              class="form-control"
+              placeholder="XXXXXXXXXXXXXXXX"
+              required
             />
-            <label class="form-check-label me-3" for="flexRadiomastercard">
-              <i class="fa-brands fa-cc-mastercard"></i>
-            </label>
+          </div>
+          <div class="col-3">
+            <label for="inputCvc" class="form-label">CVC #</label>
             <input
-              class="form-check-input mx-2"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioVisa"
+              type="number"
+              id="inputCVC"
+              class="form-control"
+              placeholder="0000"
+              required
             />
-            <label class="form-check-label me-3" for="flexRadioVisa">
-              <i class="fa-brands fa-cc-visa"></i>
-            </label>
+          </div>
+          <div class="col-4">
+            <label for="InputAmount" class="form-label">Amount $</label>
             <input
-              class="form-check-input mx-2"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadiodiners"
+              type="number"
+              class="form-control"
+              id="InputAmount"
+              required
             />
-            <label class="form-check-label me-3" for="flexRadiodiners">
-              <i class="fa-brands fa-cc-diners-club"></i>
-            </label>
-            <input
-              class="form-check-input mx-2"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioamex"
-            />
-            <label class="form-check-label" for="flexRadioamex">
-              <i class="fab fa-cc-amex"></i>
-            </label>
           </div>
         </div>
-
-        <!--Text Message-->
-        <div class="col-6"></div>
-      </div>
+        <!--Name Details-->
+        <div class="row mt-2">
+          <div class="col">
+            <label for="InputFirstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="InputFirstName"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="InputLastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="InputLastName"
+              required
+            />
+          </div>
+        </div>
+        <!--Address Details-->
+        <div class="row mt-2">
+          <div class="col-6">
+            <label for="InputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="InputCity" required />
+          </div>
+          <div class="col-3">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+              <option selected>Pick a state</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="inputPostalCode" class="form-label">Postal Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputPostalCode"
+              required
+            />
+          </div>
+        </div>
+        <div class="row mt-2 border-bottom pb-4">
+          <!--Payment Options-->
+          <div class="col-6">
+            <label class="form-check-label mb-2">We accept:</label>
+            <div
+              class="form-check d-flex bg-secondary pt-2 pb-2 rounded text-white"
+              style="width: 45%"
+            >
+              <input
+                class="form-check-input ms-1 me-2"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadiomastercard"
+                checked
+              />
+              <label class="form-check-label me-3" for="flexRadiomastercard">
+                <i class="fa-brands fa-cc-mastercard"></i>
+              </label>
+              <input
+                class="form-check-input mx-2"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioVisa"
+              />
+              <label class="form-check-label me-3" for="flexRadioVisa">
+                <i class="fa-brands fa-cc-visa"></i>
+              </label>
+              <input
+                class="form-check-input mx-2"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadiodiners"
+              />
+              <label class="form-check-label me-3" for="flexRadiodiners">
+                <i class="fa-brands fa-cc-diners-club"></i>
+              </label>
+              <input
+                class="form-check-input mx-2"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioamex"
+              />
+              <label class="form-check-label" for="flexRadioamex">
+                <i class="fab fa-cc-amex"></i>
+              </label>
+            </div>
+          </div>
+          <!--Text Area-->
+          <div class="col-6">
+            <label for="MessageInput" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="MessageInput"
+              rows="3"
+              aria-describedby="textHelpInline"
+            ></textarea>
+            <small id="textHelpInline" class="text-muted">
+              Add any notes here.
+            </small>
+          </div>
+        </div>
+        <div class="row mt-2 bg-light">
+          <div class="col-10"></div>
+          <div class="col-2 d-flex justify-content-end align-items-center">
+            <div>
+              <button class="btn btn-secondary" type="reset">Cancel</button>
+              <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
